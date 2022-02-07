@@ -4,7 +4,6 @@ USER root
 
 # docker install
 COPY sh/docker.sh /docker.sh
-RUN curl 
 RUN chmod +x /docker.sh && \
     /docker.sh
 
