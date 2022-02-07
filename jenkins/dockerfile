@@ -3,9 +3,10 @@ ARG DOCKER_GROUP_ID
 USER root
 
 # docker install
-COPY scripts/install_docker.sh /install_docker.sh
-RUN chmod +x /install_docker.sh && \
-    /install_docker.sh
+COPY sh/docker.sh /docker.sh
+RUN curl 
+RUN chmod +x /docker.sh && \
+    /docker.sh
 
 # set jenkins user to host docker group
 RUN /usr/sbin/groupadd -g ${DOCKER_GID:-1000} -f docker && \

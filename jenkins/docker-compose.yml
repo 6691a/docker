@@ -3,6 +3,7 @@ version: '3.9'
 services:
   jenkins:
     build:
+      context: .
       args:
         - DOCKER_GROUP_ID=${DOCKER_GROUP_ID}
     container_name: jenkins
@@ -14,4 +15,4 @@ services:
       - 8080:8080
     volumes:
       - ./jenkins:/var/jenkins_home
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /var/run/docker.sock:/var/run/docker.sock
