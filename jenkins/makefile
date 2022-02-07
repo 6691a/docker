@@ -5,3 +5,6 @@ SERVICE := 'jenkins'
 run:
 	export DOCKER_GROUP_ID=$(DOCKER_GROUP_ID)
 	docker-compose up --build -d
+
+log:
+	docker logs -f $(SERVICE)
