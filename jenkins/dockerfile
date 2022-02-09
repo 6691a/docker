@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:latest
-ARG DOCKER_GID
+ARG DOCKER_GID=43794
 USER root
 
 
