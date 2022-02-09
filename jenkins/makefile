@@ -1,12 +1,12 @@
-DOCKER_GID := $(shell getent group docker)
+DOCKER_GID = $(shell getent group docker)
 
-SERVICE := 'jenkins'
+SERVICE = 'jenkins'
 
 run:
 	export DOCKER_GID=$(DOCKER_GID)
 	export CONTAINER_NAME=$(SERVICE)
 	docker-compose up --build -d
-
+	echo "END RUN"
 stop:
 	docker-compose down
 
