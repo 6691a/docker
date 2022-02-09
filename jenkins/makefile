@@ -3,10 +3,8 @@ DOCKER_GID := $(shell getent group docker)
 SERVICE := 'jenkins'
 
 run:
-	echo "====!!==="
 	export DOCKER_GID=$(DOCKER_GID)
 	export
-	docker-compose up --build -d
 
 stop:
 	docker-compose down
