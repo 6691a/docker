@@ -3,7 +3,7 @@ ARG DOCKER_GID=43794
 USER root
 
 # docker gid setting
-RUN sudo groupmod -g ${DOCKER_GID} docker
+RUN groupmod -g ${DOCKER_GID} docker
 
 # docker install
 COPY sh/docker.sh /docker.sh
