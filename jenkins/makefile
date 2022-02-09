@@ -4,7 +4,9 @@ SERVICE := 'jenkins'
 
 run:
 	export DOCKER_GID=$(DOCKER_GID)
-	export
+	export CONTAINER_NAME=$(SERVICE)
+
+	docker-compose up --build -d
 
 stop:
 	docker-compose down
