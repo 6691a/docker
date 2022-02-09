@@ -1,5 +1,5 @@
 SERVICE := 'jenkins'
-DOCKER_GID :=43794
+DOCKER_GID := 43794
 run:
 	mkdir -p data
 	sudo groupmod -g ${DOCKER_GID} docker
