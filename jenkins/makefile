@@ -8,3 +8,6 @@ run:
 
 log:
 	docker logs -f $(SERVICE)
+
+exec:
+	docker exec -it $(SERVICE) sh -c "((clear && bash) || (clear && sh))"
