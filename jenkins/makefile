@@ -4,7 +4,6 @@ SERVICE := 'jenkins'
 
 run:
 	export DOCKER_GID=$(DOCKER_GID)
-	echo DOCKER_GID
 	docker-compose up --build -d
 
 stop:
