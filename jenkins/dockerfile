@@ -2,18 +2,18 @@ FROM jenkins/jenkins:latest
 ARG DOCKER_GID=43794
 USER root
 
-# docker gid setting
-RUN groupmod -g ${DOCKER_GID} docker
+
 
 # docker install
 COPY sh/docker.sh /docker.sh
 RUN chmod +x /docker.sh && \
     /docker.sh
 
-# set jenkins user to host docker group
-RUN usermod -u juniya jenkins && \
-    groupmod -g 
 
+# docker gid setting
+RUN groupmod -g ${DOCKER_GID} docker
+
+# set jenkins user to host docker group
 RUN groupadd -g ${DOCKER_GID} -f docker && \
     usermod -aG docker jenkins
 
