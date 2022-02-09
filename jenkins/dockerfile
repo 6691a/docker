@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:latest
-ARG DOCKER_GROUP_ID
+ARG DOCKER_GROUP_ID = 1000
 USER root
 
 # docker install
@@ -8,7 +8,7 @@ RUN chmod +x /docker.sh && \
     /docker.sh
 
 # set jenkins user to host docker group
-RUN /usr/sbin/groupadd -g ${DOCKER_GID} -f docker && \
+RUN /usr/sbin/groupadd -g ${DOCKER_GID:-1000} -f docker && \
     /usr/sbin/usermod -aG docker jenkins
 
 USER jenkins
