@@ -5,11 +5,11 @@ services:
     build:
       context: .
       args:
-        DOCKER_GROUP_ID: ${DOCKER_GROUP_ID}
+        DOCKER_GID: ${DOCKER_GID}
     container_name: jenkins
     environment:
       TZ: "Asia/Seoul"
-      DOCKER_GROUP_ID: ${DOCKER_GROUP_ID}
+      DOCKER_GID: ${DOCKER_GID}
       JAVA_OPTS: "-Dhudson.model.DownloadService.noSignatureCheck=true"
 
     restart: unless-stopped
