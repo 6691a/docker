@@ -11,4 +11,6 @@ RUN chmod +x /docker.sh && \
 RUN /usr/sbin/groupadd -g ${DOCKER_GID:-1000} -f docker && \
     /usr/sbin/usermod -aG docker jenkins
 
+RUN groupadd -g ${DOCKER_GROUP_ID} docker
+
 USER jenkins
