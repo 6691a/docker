@@ -8,7 +8,7 @@ RUN chmod +x /docker.sh && \
     /docker.sh
 
 # set jenkins user to host docker group
-RUN /usr/sbin/groupadd -g ${DOCKER_GID:-1000} -f docker && \
+RUN /usr/sbin/groupadd -g ${DOCKER_GROUP_ID} -f docker && \
     usermod -aG docker jenkins
 
 USER jenkins
