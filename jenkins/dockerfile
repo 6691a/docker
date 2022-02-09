@@ -2,17 +2,14 @@ FROM jenkins/jenkins:latest
 ARG DOCKER_GID
 USER root
 
-RUN echo ${DOCKER_GID}
-RUN echo ${CONTAINER_NAME}
 
+# docker install
+COPY sh/docker.sh /docker.sh
+RUN chmod +x /docker.sh && \
+    /docker.sh
 
-# # docker install
-# COPY sh/docker.sh /docker.sh
-# RUN chmod +x /docker.sh && \
-#     /docker.sh
+# set jenkins user to host docker group
+RUN groupadd -g ${DOCKER_GID} -f docker && \
+    usermod -aG docker jenkins
 
-# # set jenkins user to host docker group
-# RUN groupadd -g ${DOCKER_GID} -f docker && \
-#     usermod -aG docker jenkins
-
-# USER jenkins
+USER jenkins
