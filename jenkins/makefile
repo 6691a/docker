@@ -1,9 +1,10 @@
-DOCKER_GID := $(shell getent group docker | awk -F: '{printf "%d",$$3}')
+DOCKER_GID := $(shell getent group docker)
 
 SERVICE := 'jenkins'
 
 run:
 	export DOCKER_GID=$(DOCKER_GID)
+	echo DOCKER_GID
 	docker-compose up --build -d
 
 stop:
