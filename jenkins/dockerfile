@@ -3,6 +3,9 @@ ARG DOCKER_GID
 USER root
 
 RUN echo ${DOCKER_GID}
+RUN echo ${CONTAINER_NAME}
+
+
 # # docker install
 # COPY sh/docker.sh /docker.sh
 # RUN chmod +x /docker.sh && \

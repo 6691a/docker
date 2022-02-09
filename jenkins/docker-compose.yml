@@ -7,7 +7,7 @@ services:
       args:
         DOCKER_GID: ${DOCKER_GID}
         T: 100
-    container_name: jenkins
+    container_name: ${DOCKER_GID}
     environment:
       TZ: "Asia/Seoul"
       DOCKER_GID: ${DOCKER_GID}
